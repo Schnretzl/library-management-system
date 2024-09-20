@@ -1,4 +1,5 @@
 from book import Book; from user import User; from author import Author
+import book_menu
 
 def validate_menu_option(user_choice, max_menu_options):
     try:
@@ -54,11 +55,9 @@ def main():
         if main_menu_choice == '1':
             book_menu_choice = book_operations_menu()
             if book_menu_choice == '1':
-                title = input("Enter the title of the book: ")
-                author = input("Enter the author of the book: ")
-                genre = input("Enter the genre of the book: ")
-                publication_date = input("Enter the publication date of the book: ")
-                books.append(Book(title, author, genre, publication_date))
+                add_book()
+            elif book_menu_choice == '2':
+                borrow_book()
             
         elif main_menu_choice == '2':
             user_menu_choice = user_operations_menu()
