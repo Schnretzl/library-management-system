@@ -22,6 +22,10 @@ class Book:
     def publication_date(self):
         return self.__publication_date
     
+    @property
+    def is_available(self):
+        return self.__is_available
+    
     def borrow(self):
         if self.__is_available:
             self.__is_available = False
