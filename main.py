@@ -76,6 +76,12 @@ def main():
                 
         elif main_menu_choice == '3':
             author_menu_choice = author_operations_menu()
+            if author_menu_choice == '1':
+                author_menu.add_author(authors)
+            elif author_menu_choice == '2':
+                author_menu.view_author_details(authors)
+            elif author_menu_choice == '3':
+                author_menu.display_authors(authors)
         
         elif main_menu_choice == '4':
             break
