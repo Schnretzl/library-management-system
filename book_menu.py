@@ -48,6 +48,19 @@ def return_book(books, users):
     else:
         print("Book is already available.")
         return False
+    
+def search_book(books):
+    title = input("Enter the title of the book: ")
+    book_title_index = book_index(books, title)
+    if book_title_index is None:
+        print("Book not found.")
+        return False
+    print(f"Title: {books[book_title_index].title}")
+    print(f"Author: {books[book_title_index].author}")
+    print(f"Genre: {books[book_title_index].genre}")
+    print(f"Publication Date: {books[book_title_index].publication_date}")
+    print(f"Availability: {'Available' if books[book_title_index].is_available else 'Not Available'}")
+    return True
 
 def book_index(books, title):
     #Return the index of the book, or None if the book is not found
