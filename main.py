@@ -1,5 +1,5 @@
 from book import Book; from user import User; from author import Author
-import book_menu
+import book_menu, user_menu
 
 def validate_menu_option(user_choice, max_menu_options):
     try:
@@ -48,7 +48,7 @@ def author_operations_menu():
 
 def main():
     books = [Book("Lord of the Rings", "J.R.R. Tolkien", "fantasy", "1954")]
-    users = [User("John Doe", "1234")]
+    users = [User("John Doe")]
     authors = []
     while True:
         main_menu_choice = main_menu()
@@ -67,7 +67,17 @@ def main():
             
         elif main_menu_choice == '2':
             user_menu_choice = user_operations_menu()
+            if user_menu_choice == '1':
+                user_menu.add_user(users)
+            elif user_menu_choice == '2':
+                user_menu.view_user_details(users)
+            elif user_menu_choice == '3':
+                user_menu.display_users(users)
+                
         elif main_menu_choice == '3':
             author_menu_choice = author_operations_menu()
+        
+        elif main_menu_choice == '4':
+            break
             
 main()
