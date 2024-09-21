@@ -62,6 +62,15 @@ def search_book(books):
     print(f"Availability: {'Available' if books[book_title_index].is_available else 'Not Available'}")
     return True
 
+def display_books(books):
+    if not books:
+        print("No books available.")
+        return False
+    for index, book in enumerate(books):
+        print(f"{index + 1}. {book.title}")
+    print()
+    return True
+
 def book_index(books, title):
     #Return the index of the book, or None if the book is not found
     for index, book in enumerate(books):
