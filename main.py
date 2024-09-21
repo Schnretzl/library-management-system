@@ -47,8 +47,8 @@ def author_operations_menu():
     return choice if validate_menu_option(choice, 3) else "Invalid choice in author menu"
 
 def main():
-    books = []
-    users = []
+    books = [Book("Lord of the Rings", "J.R.R. Tolkien", "fantasy", "1954")]
+    users = [User("John Doe", "1234")]
     authors = []
     while True:
         main_menu_choice = main_menu()
