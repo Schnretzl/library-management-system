@@ -1,8 +1,11 @@
 class User:
-    def __init__(self, name, id, borrowed_books = []):
+    _next_id = 1
+    
+    def __init__(self, name, id, borrowed_books = None):
         self.__name = name
-        self.__id = id
-        self.__borrowed_books = borrowed_books
+        self.__id = User._next_id
+        User._next_id += 1
+        self.__borrowed_books = borrowed_books if borrowed_books is not None else []
         
     @property
     def name(self):
