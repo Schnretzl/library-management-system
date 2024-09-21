@@ -1,4 +1,6 @@
+import user_menu
 from book import Book
+from user import User
 
 def add_book(books):
     title = input("Enter the title of the book: ")
@@ -9,28 +11,28 @@ def add_book(books):
     
 def borrow_book(books, users):
     book_title = input("Enter the title of the book you want to borrow: ")
+    book_title_index = book_index(books, book_title)
+    if book_title_index is None:
+        print("Book not found.")
+        return False
     user_id = input("Enter your user ID: ")
-    for book in books:
-        if book.title == book_title:
-            for user in users:
-                if user.id == user_id:
-                    if book.borrow():
-                        user.borrowed_books.append(book)
-                        break
-                    else:
-                        print("Book is not available.")
-                        break
-                elif user == users[-1]:
-                    print("User not found.")
-                    break
-            break
+    user_index = user_menu.user_index(users, user_id)
+    if user_index is None:
+        print("User not found.")
+        return False
+    if books[book_title_index].borrow():
+        users[user_index].borrowed_books.append(books[book_title_index])
+        return True
+    else:
+        print("Book is not available.")
+        return False
         
 def return_book(books, users):
     pass
 
 def book_index(books, title):
     #Return the index of the book, or None if the book is not found
-    for index in range(len(books)):
-        if books[index].title == title:
+    for index, book in enumerate(books):
+        if book.title == title:
             return index
     return None

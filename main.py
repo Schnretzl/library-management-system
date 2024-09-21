@@ -55,9 +55,15 @@ def main():
         if main_menu_choice == '1':
             book_menu_choice = book_operations_menu()
             if book_menu_choice == '1':
-                add_book()
+                book_menu.add_book(books)
             elif book_menu_choice == '2':
-                borrow_book()
+                book_menu.borrow_book(books, users)
+            elif book_menu_choice == '3':
+                book_menu.return_book(books, users)
+            elif book_menu_choice == '4':
+                book_menu.search_book(books)
+            elif book_menu_choice == '5':
+                book_menu.display_books(books)
             
         elif main_menu_choice == '2':
             user_menu_choice = user_operations_menu()
