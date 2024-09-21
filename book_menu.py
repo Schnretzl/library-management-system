@@ -24,3 +24,13 @@ def borrow_book(books, users):
                     print("User not found.")
                     break
             break
+        
+def return_book(books, users):
+    pass
+
+def book_index(books, title):
+    #Return the index of the book, or None if the book is not found
+    for index in range(len(books)):
+        if books[index].title == title:
+            return index
+    return None
