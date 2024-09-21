@@ -1,7 +1,7 @@
 class User:
     _next_id = 1
     
-    def __init__(self, name, id, borrowed_books = None):
+    def __init__(self, name, borrowed_books = None):
         self.__name = name
         self.__id = User._next_id
         User._next_id += 1
