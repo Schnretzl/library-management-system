@@ -15,7 +15,7 @@ def borrow_book(books, users):
     if book_title_index is None:
         print("Book not found.")
         return False
-    user_id = input("Enter your user ID: ")
+    user_id = user_menu.get_valid_user_id()
     user_index = user_menu.user_index(users, user_id)
     if user_index is None:
         print("User not found.")
@@ -28,7 +28,7 @@ def borrow_book(books, users):
         return False
         
 def return_book(books, users):
-    user_id = input("Enter your user ID: ")
+    user_id = user_menu.get_valid_user_id()
     user_index = user_menu.user_index(users, user_id)
     if user_index is None:
         print("User not found.")
