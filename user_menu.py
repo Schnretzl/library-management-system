@@ -5,7 +5,7 @@ def add_user(users):
     users.append(User(name))
     
 def view_user_details(users):
-    user_id = get_valid_user_id(users)
+    user_id = get_valid_user_id()
     find_user_index = user_index(users, user_id)
     if find_user_index is None:
         print("User not found.")
