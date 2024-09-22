@@ -11,12 +11,12 @@ def add_book(books):
     
 def borrow_book(books, users):
     book_title = input("Enter the title of the book you want to borrow: ")
-    book_title_index = book_index(books, book_title)
+    book_title_index = find_book_index(books, book_title)
     if book_title_index is None:
         print("Book not found.")
         return False
     user_id = user_menu.get_valid_user_id()
-    user_index = user_menu.user_index(users, user_id)
+    user_index = user_menu.find_user_index(users, user_id)
     if user_index is None:
         print("User not found.")
         return False
@@ -29,13 +29,13 @@ def borrow_book(books, users):
         
 def return_book(books, users):
     user_id = user_menu.get_valid_user_id()
-    user_index = user_menu.user_index(users, user_id)
+    user_index = user_menu.find_user_index(users, user_id)
     if user_index is None:
         print("User not found.")
         return False
     book_title = input("Enter the title of the book you want to return: ")
-    book_title_index = book_index(books, book_title)
-    user_book_index = book_index(users[user_index].borrowed_books, book_title)
+    book_title_index = find_book_index(books, book_title)
+    user_book_index = find_book_index(users[user_index].borrowed_books, book_title)
     if book_title_index is None:
         print("Book not found.")
         return False
@@ -51,7 +51,7 @@ def return_book(books, users):
     
 def search_book(books):
     title = input("Enter the title of the book: ")
-    book_title_index = book_index(books, title)
+    book_title_index = find_book_index(books, title)
     if book_title_index is None:
         print("Book not found.")
         return False
@@ -71,7 +71,7 @@ def display_books(books):
     print()
     return True
 
-def book_index(books, title):
+def find_book_index(books, title):
     #Return the index of the book, or None if the book is not found
     for index, book in enumerate(books):
         if book.title == title:
