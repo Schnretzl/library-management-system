@@ -8,6 +8,7 @@ def add_book(books):
     genre = input("Enter the genre of the book: ")
     publication_date = input("Enter the publication date of the book: ")
     books.append(Book(title, author, genre, publication_date))
+    print(f"{title} added to the system successfully.\n")
     
 def borrow_book(books, users):
     book_title = input("Enter the title of the book you want to borrow: ")

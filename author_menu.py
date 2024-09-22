@@ -4,6 +4,7 @@ def add_author(authors):
     name = input("Enter the name of the author: ")
     bio = input("Enter the biography of the author: ")
     authors.append(Author(name, bio))
+    print(f"Added {name} to the list of authors.\n")
     
 def view_author_details(authors):
     author_name = input("Enter the name of the author: ")
