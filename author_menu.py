@@ -19,7 +19,6 @@ def view_author_details(authors):
 def display_authors(authors):
     for author in authors:
         print(f"Name: {author.name}")
-        print(f"Biography: {author.biography}")
     print()
         
 def find_author_index(authors, author_name):
