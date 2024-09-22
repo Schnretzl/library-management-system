@@ -6,7 +6,7 @@ def add_user(users):
     
 def view_user_details(users):
     user_id = get_valid_user_id()
-    find_user_index = user_index(users, user_id)
+    find_user_index = find_user_index(users, user_id)
     if find_user_index is None:
         print("User not found.")
         return False
@@ -26,7 +26,7 @@ def display_users(users):
         print(f"ID: {user.id}")
         print()
         
-def user_index(users, user_id):
+def find_user_index(users, user_id):
     #Return the index of the user, or None if the user is not found
     for index, user in enumerate(users):
         if user.id == user_id:
