@@ -26,3 +26,13 @@ Prompts the user for user ID, and displays the user's name and borrowed books.
 
 ### Display all users
 Displays the names and IDs of all users.
+
+## Author Operations
+### Add a new author
+Prompts the user for an author's name and bio, and adds a new author to the library.
+
+### View author details
+Prompts the user for an author's name, and displays the author's name and bio, if found.
+
+### Display all authors
+Displays a list of names of all authors.
